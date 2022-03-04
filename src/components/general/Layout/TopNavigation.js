@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const TopNavigation = ({
   title = "My Board",
   showBack = false,
-  showFilter = true,
+  showFilter = false,
 }) => {
   const navigate = useNavigate();
 

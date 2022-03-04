@@ -1,6 +1,4 @@
-import { Home } from "../../pages";
-import MyIssues from "../../pages/MyIssues";
-import { ViewIssue } from "../../pages/ViewIssue";
+import { CreateIssue, Home, MyIssues, ViewIssue } from "../../pages";
 
 export const useRouter = () => [
   // myIssues
@@ -15,5 +13,9 @@ export const useRouter = () => [
   {
     path: "/my_issues/:id",
     element: <ViewIssue />,
+  },
+  {
+    path: "/my_issues/create",
+    element: <CreateIssue />,
   },
 ];

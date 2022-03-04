@@ -10,7 +10,7 @@ import { PostedIssue } from "../components/issues/PostedIssue";
  * Click issue to view its replies
  */
 
-const MyIssues = () => {
+export const MyIssues = () => {
   return (
     <NormalLayout
       navigation={{ title: "My Issues", showBack: true, showFilter: true }}
@@ -38,5 +38,3 @@ const MyIssues = () => {
     </NormalLayout>
   );
 };
-
-export default MyIssues;
