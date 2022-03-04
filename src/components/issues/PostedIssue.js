@@ -5,6 +5,7 @@ import SmallGrayText from "../general/Typography/SmallGrayText";
 import { IoTrashOutline } from "react-icons/io5";
 import { CompleteButton, EditButton } from "../general/Buttons";
 import { Link } from "react-router-dom";
+import { RoundedYellow } from "./RoundedYellow";
 
 export const PostedIssue = () => {
   return (
@@ -12,7 +13,7 @@ export const PostedIssue = () => {
       {/* nav */}
       <div className="flex justify-between items-center">
         {/* rounded persona*/}
-        <div className="h-6 w-6 rounded-full bg-yellow"></div>
+        <RoundedYellow />
 
         {/* poster name */}
         <Bold className="text-md">Robert Mwalugha</Bold>

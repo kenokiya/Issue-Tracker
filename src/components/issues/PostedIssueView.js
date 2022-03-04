@@ -1,8 +1,13 @@
 import React from "react";
 import { CompleteButton } from "../general/Buttons";
 import Bold from "../general/Typography/Bold";
+import { DescriptionGrayText } from "../general/Typography/DescriptionGrayText";
 import SmallGrayText from "../general/Typography/SmallGrayText";
 import { Wrapper } from "../general/Wrapper";
+import { Input } from "../Input";
+import { Divider } from "./Divider";
+import { PostedIssueReply } from "./PostedIssueReply";
+import { RoundedYellow } from "./RoundedYellow";
 
 /**
  * View a posted issue in details
@@ -10,11 +15,11 @@ import { Wrapper } from "../general/Wrapper";
  */
 const PostedIssueView = () => {
   return (
-    <Wrapper className="flex flex-col justify-between gap-3 my-2">
+    <Wrapper className="flex flex-col justify-between my-2 gap-1">
       {/* nav */}
       <div className="flex justify-between items-center">
         {/* rounded persona*/}
-        <div className="h-6 w-6 rounded-full bg-yellow"></div>
+        <RoundedYellow />
 
         {/* poster name */}
         <Bold className="text-md">Robert Mwalugha</Bold>
@@ -22,18 +27,33 @@ const PostedIssueView = () => {
         <SmallGrayText>Feb 23 2022</SmallGrayText>
         {/* bin */}
       </div>
-      {/* description */}
-      <p className=" text-gray-700 px-1" style={{ fontSize: "13px" }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati quas
-        alias, voluptatum modi incidunt distinctio culpa laudantium enim odit
-        ipsam.
-        <Bold className="text-sm text-black ml-2">@PeterM</Bold>
-      </p>
-      {/* images section */}
-      <div className="flex gap-2">
-        {/* image 1 */}
-        <div className="h-20 w-24 bg-slate-400 rounded"></div>
-        <div className="h-20 w-24 bg-slate-400 rounded"></div>
+      {/* margined wrapper */}
+      <div className="ml-6 flex flex-col gap-3">
+        {/* description */}
+        <DescriptionGrayText>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+          quas alias, voluptatum modi incidunt distinctio culpa laudantium enim
+          odit ipsam.
+          <Bold className="text-sm text-black ml-2">@PeterM</Bold>
+        </DescriptionGrayText>
+        {/* images section */}
+        <div className="flex gap-2">
+          {/* image 1 */}
+          <div className="h-20 w-24 bg-slate-400 rounded"></div>
+          <div className="h-20 w-24 bg-slate-400 rounded"></div>
+        </div>
+
+        <PostedIssueReply />
+        {/* divider */}
+        <Divider />
+
+        <PostedIssueReply />
+
+        <Divider />
+
+        <PostedIssueReply />
+
+        <Input />
       </div>
       {/* actions */}
       <div className="flex justify-end gap-2">
