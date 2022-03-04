@@ -22,11 +22,13 @@ export const Home = () => {
         </Link>
 
         {/* tagged issues */}
-        <IssuesCard
-          icon={<FiAtSign />}
-          numberIssues={4}
-          title="Tagged Issues"
-        />
+        <Link to="/tagged">
+          <IssuesCard
+            icon={<FiAtSign />}
+            numberIssues={4}
+            title="Tagged Issues"
+          />
+        </Link>
       </div>
 
       {/* grouped issues issues: */}

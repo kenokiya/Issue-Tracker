@@ -1,9 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { EditButton } from "../components/general/Buttons";
 import Bold from "../components/general/Typography/Bold";
 import { Wrapper } from "../components/general/Wrapper";
-import { Field, Input } from "../components/Input";
 import { ImageView } from "../components/issues/ImageView";
 import NormalLayout from "../components/NormalLayout";
 

@@ -8,7 +8,7 @@ export const ActionButton = ({ children, className }) => {
 
 export const EditButton = ({ children }) => {
   return (
-    <ActionButton className={`text-yellow bg-yellow-light w-20`}>
+    <ActionButton className={`text-yellow bg-yellow-light w-24`}>
       {children}
     </ActionButton>
   );

@@ -1,4 +1,5 @@
 import { CreateIssue, Home, MyIssues, ViewIssue } from "../../pages";
+import { TaggedIssue } from "../../pages/TaggedIssue";
 
 export const useRouter = () => [
   // myIssues
@@ -17,5 +18,10 @@ export const useRouter = () => [
   {
     path: "/my_issues/create",
     element: <CreateIssue />,
+  },
+
+  {
+    path: "/tagged",
+    element: <TaggedIssue />,
   },
 ];
