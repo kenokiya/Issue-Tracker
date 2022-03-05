@@ -1,7 +1,11 @@
 import React from "react";
 
-const SmallGrayText = ({ children }) => {
-  return <span className="text-gray-400 font-medium text-xs ">{children}</span>;
+const SmallGrayText = ({ children, className }) => {
+  return (
+    <span className={`text-gray-400 font-medium text-xs ${className}`}>
+      {children}
+    </span>
+  );
 };
 
 export default SmallGrayText;

@@ -16,12 +16,15 @@ export const BottomNavigation = () => {
           <BsPlusLg />
         </button>
       </Link>
-      <button className="text-3xl relative">
-        <div className="rounded-full text-white font-medium absolute right-0 top-0 bg-notification-red text-xs flex items-center justify-center p-2 h-4 w-4">
-          1
-        </div>
-        <BsBell />
-      </button>
+
+      <Link to="/notifications">
+        <button className="text-3xl relative">
+          <div className="rounded-full text-white font-medium absolute right-0 top-0 bg-notification-red text-xs flex items-center justify-center p-2 h-4 w-4">
+            1
+          </div>
+          <BsBell />
+        </button>
+      </Link>
     </div>
   );
 };

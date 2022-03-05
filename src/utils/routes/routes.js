@@ -1,5 +1,11 @@
-import { CreateIssue, Home, MyIssues, ViewIssue } from "../../pages";
-import { TaggedIssue } from "../../pages/TaggedIssue";
+import {
+  CreateIssue,
+  Home,
+  MyIssues,
+  Notifications,
+  TaggedIssue,
+  ViewIssue,
+} from "../../pages";
 
 export const useRouter = () => [
   // myIssues
@@ -23,5 +29,10 @@ export const useRouter = () => [
   {
     path: "/tagged",
     element: <TaggedIssue />,
+  },
+
+  {
+    path: "/notifications",
+    element: <Notifications />,
   },
 ];
