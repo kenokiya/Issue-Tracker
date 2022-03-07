@@ -9,7 +9,7 @@ export const Notifications = () => {
     <NormalLayout
       navigation={{ title: "Notifications", showBack: true, showFilter: true }}
     >
-      <div className="p-2">
+      <div className="px-4">
         <NormalText className="text-center">
           <span className="text-sm ">
             You have <span className="text-yellow">3 Notifications</span> Today
@@ -25,17 +25,17 @@ export const Notifications = () => {
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
               time="2min"
-            />{" "}
+            />
             <Notification
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
               time="2min"
-            />{" "}
+            />
             <Notification
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
               time="2min"
-            />{" "}
+            />
             <Notification
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
@@ -54,19 +54,19 @@ export const Notifications = () => {
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
               time="2min"
-            />{" "}
+            />
             <Notification
               isViewed={true}
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
               time="2min"
-            />{" "}
+            />
             <Notification
               isViewed={true}
               title="Robert Mwalugha has tagged you"
               message="Kindly look at this product at philadelphia house...."
               time="2min"
-            />{" "}
+            />
             <Notification
               isViewed={true}
               title="Robert Mwalugha has tagged you"

@@ -1,3 +1,4 @@
+import { Admin } from "../../AdminPages/Admin";
 import {
   CreateIssue,
   Home,
@@ -6,6 +7,7 @@ import {
   TaggedIssue,
   ViewIssue,
 } from "../../pages";
+import { Login } from "../../pages/Login";
 
 export const useRouter = () => [
   // myIssues
@@ -35,4 +37,17 @@ export const useRouter = () => [
     path: "/notifications",
     element: <Notifications />,
   },
+
+  {
+    path: "/login",
+    element: <Login />,
+  },
+
+  // ADMIN ROUTES
+  {
+    path: "/admin/",
+    element: <Admin />,
+  },
+
+  // ADMIN ROUTES END
 ];
