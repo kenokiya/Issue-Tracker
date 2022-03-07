@@ -18,7 +18,7 @@ export const AdminLayout = ({ children, navigation }) => {
       </div>
 
       {/* main section */}
-      <div className=" py-4 h-full ">{children}</div>
+      <div className=" py-4 h-full px-4">{children}</div>
 
       {/* bottom navigation section */}
       <div

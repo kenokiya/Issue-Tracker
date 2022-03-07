@@ -16,7 +16,7 @@ export const EditButton = ({ children }) => {
 
 export const CompleteButton = ({ children }) => {
   return (
-    <ActionButton className={`text-green bg-green-light w-24`}>
+    <ActionButton className={`text-success-green bg-green-light w-24`}>
       {children}
     </ActionButton>
   );

@@ -1,4 +1,4 @@
-import { Admin } from "../../AdminPages/Admin";
+import { Admin, Issues, Users, ViewSingleUser } from "../../AdminPages";
 import {
   CreateIssue,
   Home,
@@ -47,6 +47,21 @@ export const useRouter = () => [
   {
     path: "/admin/",
     element: <Admin />,
+  },
+
+  {
+    path: "/admin/issues",
+    element: <Issues />,
+  },
+
+  {
+    path: "/admin/users",
+    element: <Users />,
+  },
+
+  {
+    path: "/admin/users/:id",
+    element: <ViewSingleUser />,
   },
 
   // ADMIN ROUTES END
