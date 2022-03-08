@@ -1,5 +1,6 @@
 import React from "react";
 import { AdminLayout } from "../components/admin/AdminLayout";
+import { AddButton } from "../components/general/Buttons";
 import Bold from "../components/general/Typography/Bold";
 import { Wrapper } from "../components/general/Wrapper";
 import { RoundedYellow } from "../components/issues/RoundedYellow";
@@ -7,8 +8,10 @@ import { RoundedYellow } from "../components/issues/RoundedYellow";
 export const ViewSingleUser = () => {
   return (
     <AdminLayout navigation={{ title: "User", showBack: true }}>
-      {/* User Card */}
-      <UserCard />
+      <div className="px-3">
+        {/* User Card */}
+        <UserCard />
+      </div>
     </AdminLayout>
   );
 };
@@ -16,13 +19,17 @@ export const ViewSingleUser = () => {
 const UserCard = () => (
   <Wrapper className="flex flex-col gap-4">
     {/* header */}
-    <div className="flex justify-center gap-5">
+    <div className="flex justify-center items-center gap-5">
       <RoundedYellow />
 
       <div className="w-6/12 flex flex-col ">
         <Bold className="">Robert Mwalugha</Bold>
 
         <Status status="Active" />
+      </div>
+
+      <div className="absolute bottom-24 right-2">
+        <AddButton to="/admin/new_user" />
       </div>
     </div>
 
@@ -47,8 +54,8 @@ const UserCard = () => (
         Delete
       </button>
 
-      <button className=" bg-red-100 text-red-600 px-2 rounded-lg h-8 font-bold text-xs">
-        Deactivate
+      <button className=" bg-green-100 text-success-green px-2 rounded-lg h-8 font-bold text-xs">
+        Activate
       </button>
     </div>
   </Wrapper>

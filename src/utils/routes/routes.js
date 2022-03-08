@@ -1,4 +1,11 @@
-import { Admin, Issues, Users, ViewSingleUser } from "../../AdminPages";
+import {
+  Admin,
+  Issues,
+  NewUser,
+  Users,
+  ViewSingleUser,
+} from "../../AdminPages";
+import { Reports } from "../../AdminPages/Reports";
 import {
   CreateIssue,
   Home,
@@ -60,8 +67,18 @@ export const useRouter = () => [
   },
 
   {
+    path: "/admin/new_user",
+    element: <NewUser />,
+  },
+
+  {
     path: "/admin/users/:id",
     element: <ViewSingleUser />,
+  },
+
+  {
+    path: "/admin/reports",
+    element: <Reports />,
   },
 
   // ADMIN ROUTES END

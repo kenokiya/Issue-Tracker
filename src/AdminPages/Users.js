@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { AdminLayout } from "../components/admin/AdminLayout";
+import { AddButton } from "../components/general/Buttons";
 import Bold from "../components/general/Typography/Bold";
 import { RoundedYellow } from "../components/issues/RoundedYellow";
 
@@ -30,6 +31,10 @@ export const Users = () => {
           users.map((u, i) => (
             <UserCard name={u.name} status={u.status} key={i} />
           ))}
+
+        <div className="absolute bottom-24 right-2">
+          <AddButton to="/admin/new_user" />
+        </div>
       </div>
     </AdminLayout>
   );

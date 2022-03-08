@@ -1,6 +1,6 @@
 import React from "react";
-import { BottomNavigation } from "../general/Layout/BottomNavigation";
 import TopNavigation from "../general/Layout/TopNavigation";
+import BottomNavigation from "./BottomNavigation";
 
 export const AdminLayout = ({ children, navigation }) => {
   return (
@@ -18,7 +18,7 @@ export const AdminLayout = ({ children, navigation }) => {
       </div>
 
       {/* main section */}
-      <div className=" py-4 h-full px-4">{children}</div>
+      <div className=" py-4 h-full ">{children}</div>
 
       {/* bottom navigation section */}
       <div

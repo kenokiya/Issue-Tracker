@@ -10,6 +10,9 @@ module.exports = {
         "green-light": "#05C71838",
         light: "#f5f5f5",
       },
+      width: {
+        26: "6.5rem",
+      },
     },
   },
   plugins: [],

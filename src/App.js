@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { MainContext } from "./utils/MainContext";
 import { useRouter } from "./utils/routes/routes";
 
 function App() {
@@ -6,14 +7,16 @@ function App() {
 
   return (
     <div className="App md:hidden">
-      <BrowserRouter>
-        <Routes>
-          {routes &&
-            routes.map((r) => (
-              <Route exact key={r.path} path={r.path} element={r.element} />
-            ))}
-        </Routes>
-      </BrowserRouter>
+      <MainContext>
+        <BrowserRouter>
+          <Routes>
+            {routes &&
+              routes.map((r) => (
+                <Route exact key={r.path} path={r.path} element={r.element} />
+              ))}
+          </Routes>
+        </BrowserRouter>
+      </MainContext>
     </div>
   );
 }

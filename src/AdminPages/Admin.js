@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 export const Admin = () => {
   return (
-    <AdminLayout navigation={{ title: "Admin", showFilter: true }}>
+    <AdminLayout navigation={{ title: "Admin" }}>
       {/* Cards */}
       <div className="grid grid-cols-3 justify-items-center w-full my-4">
         <IssueCard className="bg-blue-100">
@@ -25,7 +25,7 @@ export const Admin = () => {
           <div className="p-2 rounded-full bg-red-500">
             <GoAlert className="text-2xl text-white" />
           </div>
-          <span className="text-xs font-medium">Unresolved Issues</span>
+          <span className="text-xs font-medium">Unresolved</span>
 
           <Bold>30</Bold>
         </IssueCard>
@@ -42,7 +42,7 @@ export const Admin = () => {
       </div>
 
       {/* Issues */}
-      <div className="px-3">
+      <div className="px-4">
         {/* header */}
         <div className="flex justify-between">
           <Bold className="text-2xl">Issues</Bold>
@@ -64,9 +64,9 @@ export const Admin = () => {
   );
 };
 
-const IssueCard = ({ className, children }) => (
+export const IssueCard = ({ className, children }) => (
   <div
-    className={`h-28 w-28 rounded-xl flex flex-col gap-1 items-center justify-center ${className}`}
+    className={`h-28 w-26 text-center rounded-xl flex flex-col gap-1 items-center justify-center ${className}`}
   >
     {children}
   </div>
