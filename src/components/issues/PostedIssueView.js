@@ -4,7 +4,6 @@ import Bold from "../general/Typography/Bold";
 import { DescriptionGrayText } from "../general/Typography/DescriptionGrayText";
 import SmallGrayText from "../general/Typography/SmallGrayText";
 import { Wrapper } from "../general/Wrapper";
-import { Input } from "../Input";
 import { Divider } from "./Divider";
 import { PostedIssueReply } from "./PostedIssueReply";
 import { RoundedYellow } from "./RoundedYellow";
@@ -52,8 +51,6 @@ const PostedIssueView = () => {
         <Divider />
 
         <PostedIssueReply />
-
-        <Input />
       </div>
       {/* actions */}
       <div className="flex justify-end gap-2">

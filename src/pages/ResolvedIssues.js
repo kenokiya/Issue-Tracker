@@ -1,15 +1,14 @@
 import React from "react";
-import { AiOutlineCalendar } from "react-icons/ai";
 import { LightWrapper } from "../components/general/LightWrapper";
 import { Wrapper } from "../components/general/Wrapper";
-import { Input } from "../components/Input";
-import PostedIssueView from "../components/issues/PostedIssueView";
+import { PostedIssue } from "../components/issues/PostedIssue";
+import { AiOutlineCalendar } from "react-icons/ai";
 import NormalLayout from "../components/NormalLayout";
 
-export const ViewIssue = () => {
+export const ResolvedIssues = () => {
   return (
     <NormalLayout
-      navigation={{ title: "My Issues", showBack: true, showFilter: true }}
+      navigation={{ title: "Resolved", showBack: true, showFilter: true }}
     >
       <div className="px-2">
         <div>
@@ -25,13 +24,8 @@ export const ViewIssue = () => {
         </div>
 
         {/* posted issues */}
-        <div className="mb-11">
-          <PostedIssueView />
-        </div>
-
-        {/* issue input */}
-        <div className="fixed left-0 right-0" style={{ bottom: "11%" }}>
-          <Input />
+        <div className="">
+          <PostedIssue />
         </div>
       </div>
     </NormalLayout>

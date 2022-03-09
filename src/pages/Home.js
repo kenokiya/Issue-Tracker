@@ -38,24 +38,32 @@ export const Home = () => {
 
         {/* issues list */}
         <div className="flex flex-col gap-3">
-          <IssueContainer
-            title={`Resolved  Issues`}
-            timestamp={"Feb 03 2022"}
-            numberIssues={12}
-            tasks="12 tasks"
-          />
-          <IssueContainer
-            title={`Raised  Issues`}
-            timestamp={"Feb 03 2022"}
-            numberIssues={8}
-            tasks="12 tasks"
-          />
-          <IssueContainer
-            title={`Unresolved  Issues`}
-            timestamp={"Feb 03 2022"}
-            numberIssues={6}
-            tasks="12 tasks"
-          />
+          <Link to="/my_issues">
+            <IssueContainer
+              title={`Raised  Issues`}
+              timestamp={"Feb 03 2022"}
+              numberIssues={8}
+              tasks="12 tasks"
+            />
+          </Link>
+
+          <Link to="/resolved">
+            <IssueContainer
+              title={`Resolved  Issues`}
+              timestamp={"Feb 03 2022"}
+              numberIssues={12}
+              tasks="12 tasks"
+            />
+          </Link>
+
+          <Link to="/unresolved">
+            <IssueContainer
+              title={`Unresolved  Issues`}
+              timestamp={"Feb 03 2022"}
+              numberIssues={6}
+              tasks="12 tasks"
+            />
+          </Link>
         </div>
       </div>
     </NormalLayout>

@@ -3,20 +3,28 @@ import { RiSendPlaneFill } from "react-icons/ri";
 
 export const Field = () => {
   return (
-    <input type="text" className="h-full w-full bg-yellow-light rounded-3xl " />
+    <input
+      type="text"
+      className="h-full w-full bg-inherit text-sm focus:outline-yellow"
+    />
   );
 };
 
 export const Input = () => {
   return (
-    <div className="relative h-12 my-1">
-      <Field />
+    <div
+      className="flex h-12 my-1  rounded-3xl"
+      style={{ backgroundColor: "#FDEEB5" }}
+    >
       {/* send button */}
-      <button className="absolute right-0 top-0 h-full px-2 text-yellow bg-yellow-light text-2xl rounded-r-3xl">
-        <RiSendPlaneFill />
+      <button className="h-12 w-10 text-yellow  bg-yellow-light flex items-center justify-center rounded-l-3xl  ">
+        <BsPlusLg className="text" />
       </button>
-      <button className="h-full w-12 bg-yellow-light flex items-center justify-center rounded-full absolute top-0 ">
-        <BsPlusLg className="text-xl" />
+
+      <Field />
+
+      <button className=" h-full px-2 text-yellow bg-yellow-light text-2xl rounded-r-3xl">
+        <RiSendPlaneFill />
       </button>
     </div>
   );

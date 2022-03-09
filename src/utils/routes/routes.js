@@ -11,7 +11,9 @@ import {
   Home,
   MyIssues,
   Notifications,
+  ResolvedIssues,
   TaggedIssue,
+  UnresolvedIssues,
   ViewIssue,
 } from "../../pages";
 import { Login } from "../../pages/Login";
@@ -22,6 +24,8 @@ export const useRouter = () => [
     path: "/",
     element: <Home />,
   },
+
+  // Issue Routes
   {
     path: "/my_issues",
     element: <MyIssues />,
@@ -39,6 +43,18 @@ export const useRouter = () => [
     path: "/tagged",
     element: <TaggedIssue />,
   },
+
+  {
+    path: "/resolved",
+    element: <ResolvedIssues />,
+  },
+
+  {
+    path: "/unresolved",
+    element: <UnresolvedIssues />,
+  },
+
+  // End of Issue Routes
 
   {
     path: "/notifications",
