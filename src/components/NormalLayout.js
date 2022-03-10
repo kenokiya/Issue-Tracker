@@ -1,6 +1,9 @@
 import React from "react";
 import { BottomNavigation } from "./general/Layout/BottomNavigation";
 import TopNavigation from "./general/Layout/TopNavigation";
+import { LightWrapper } from "./general/LightWrapper";
+import { Wrapper } from "./general/Wrapper";
+import { AiOutlineCalendar } from "react-icons/ai";
 
 const NormalLayout = ({ children, navigation }) => {
   return (
@@ -18,7 +21,20 @@ const NormalLayout = ({ children, navigation }) => {
       </div>
 
       {/* main section */}
-      <div className=" py-4 h-full ">{children}</div>
+      <div className=" py-4 h-full ">
+        <div>
+          <Wrapper className=" flex justify-around p-2">
+            <LightWrapper className="p-2 gap-3 text-sm min-w-28 px-5">
+              <AiOutlineCalendar className=" text-yellow text-base" />
+              Today
+            </LightWrapper>
+            <LightWrapper className="p-2 gap-3 justify-start text-sm w-32  px-5">
+              Service
+            </LightWrapper>
+          </Wrapper>
+        </div>
+        {children}
+      </div>
 
       {/* bottom navigation section */}
       <div
