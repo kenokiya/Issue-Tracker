@@ -22,17 +22,19 @@ const NormalLayout = ({ children, navigation }) => {
 
       {/* main section */}
       <div className=" py-4 h-full ">
-        <div>
-          <Wrapper className=" flex justify-around p-2">
-            <LightWrapper className="p-2 gap-3 text-sm min-w-28 px-5">
-              <AiOutlineCalendar className=" text-yellow text-base" />
-              Today
-            </LightWrapper>
-            <LightWrapper className="p-2 gap-3 justify-start text-sm w-32  px-5">
-              Service
-            </LightWrapper>
-          </Wrapper>
-        </div>
+        {navigation.showFilter && (
+          <div>
+            <Wrapper className=" flex justify-around p-2">
+              <LightWrapper className="p-2 gap-3 text-sm min-w-28 px-5">
+                <AiOutlineCalendar className=" text-yellow text-base" />
+                Today
+              </LightWrapper>
+              <LightWrapper className="p-2 gap-3 justify-start text-sm w-32  px-5">
+                Service
+              </LightWrapper>
+            </Wrapper>
+          </div>
+        )}
         {children}
       </div>
 
