@@ -59,7 +59,7 @@ class ApiAuthController extends Controller
                 'validation_errors' => $validator->errors(),
             ]);
         } else {
-            $user = User::where('username', $request->username)->firstOrFail();
+            $user = User::where('username', $request->username)->first();
 
             if (!$user || !Hash::check($request->password, $user->password)) {
                 return response()->json([

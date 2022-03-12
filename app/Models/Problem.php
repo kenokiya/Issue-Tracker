@@ -14,20 +14,21 @@ class Problem extends Model
 
     protected $fillable = ['problem_details', 'image', 'service_id', 'user_id', 'targeted_id', 'notification', 'status'];
 
-   public function user()
-   {
-       return $this->belongsTo(User::class);
-   }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
-   public function targetUser()
-   {
-       return $this->belongsTo(User::class, 'id');
-   }
+    protected $with = ['user'];
+    public function targetUser()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
 
-   public function service()
-   {
-       return $this->belongsTo(Service::class);
-   }
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
     public function solution()
     {
         return $this->hasMany(Solution::class);

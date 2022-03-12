@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\ProblemsController;
 use App\Http\Controllers\Api\SolutionController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\FilterController;
+use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\Admin\AllProblemsSolutionsController;
 use App\Http\Controllers\Api\Admin\UserController;
 
@@ -28,7 +29,7 @@ Route::post('register', [ApiAuthcontroller::class, 'register']);
 Route::post('login', [ApiAuthcontroller::class, 'login']);
 
 //Logout route api
-Route::middleware(['auth:sanctum'])->group(function(){
+Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('logout', [ApiAuthcontroller::class, 'logout']);
 });
 
@@ -39,9 +40,9 @@ Route::post('forgort-password', [ApiAuthcontroller::class, 'forgortPassword']);
 Route::post('update-password', [ApiAuthcontroller::class, 'resetPassword']);
 
 //Admin routes api
-Route::middleware(['auth:sanctum', 'isApiAdmin'])->group(function(){
+Route::middleware(['auth:sanctum', 'isApiAdmin'])->group(function () {
     Route::get('checkingAuthenticated', function () {
-        return response()->json(['message'=>'You are in', 'status'=>200], 200);
+        return response()->json(['message' => 'You are in', 'status' => 200], 200);
     });
 
     //Get all problems raised route api
@@ -49,7 +50,7 @@ Route::middleware(['auth:sanctum', 'isApiAdmin'])->group(function(){
 
     //Get all solutions to a perticular problem route api
     Route::get('get-all-solutions/{problem_id}', [AllProblemsSolutionsController::class, 'solutions']);
-   
+
     //get solved problems
     Route::get('get-solvedProblems', [AllProblemsSolutionsController::class, 'solvedProblems']);
 
@@ -57,7 +58,7 @@ Route::middleware(['auth:sanctum', 'isApiAdmin'])->group(function(){
     Route::get('get-unsolvedProblems', [AllProblemsSolutionsController::class, 'unsolvedProblems']);
 
     //post service
-    Route::post('post-service', [ServiceController:: class, 'store']);
+    Route::post('post-service', [ServiceController::class, 'store']);
 
     //get services analysis
     Route::get('service-analysis', [AllProblemsSolutionsController::class, 'serviceAnalysis']);
@@ -73,10 +74,25 @@ Route::middleware(['auth:sanctum', 'isApiAdmin'])->group(function(){
 
     //Delete user account route api
     Route::delete('delete-user/{id}', [UserController::class, 'destroy']);
-
 });
 
 //Normal user routes api
+//Get my notification count route api
+Route::get('get-notification-count', [NotificationController::class, 'notification']);
+//Get my problems count routes api
+Route::get('get-my-problem-count', [ProblemsController::class, 'myProblemsCount']);
+
+//Get my problems count routes api
+Route::get('get-my-tagged-count', [ProblemsController::class, 'taggedProblemsCount']);
+
+//Get solved problems count routes api
+Route::get('get-solved-problem-count', [ProblemsController::class, 'allSolvedProblemsCount']);
+
+//Get all problems count routes api
+Route::get('get-all-problem-count', [ProblemsController::class, 'allProblemsCount']);
+
+//Get unsolved problems count routes api
+Route::get('get-unsolved-problem-count', [ProblemsController::class, 'allUnsolvedProblemsCount']);
 
 //Get all services route api
 Route::get('get-services', [ServiceController::class, 'index']);

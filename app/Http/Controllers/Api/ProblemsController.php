@@ -42,11 +42,10 @@ class ProblemsController extends Controller
             } else {
                 return response()->json([
                     'status' => 400,
-                    'message' => 'Currently have not posted problem'
+                    'message' => 'Currently you have not posted problem'
                 ]);
             }
-        }
-        else {
+        } else {
             return response()->json([
                 'status' => 401,
                 'message' => 'Please login to post your problem'
@@ -58,7 +57,7 @@ class ProblemsController extends Controller
     {
         if (auth('sanctum')->check()) {
             $user_id = auth('sanctum')->user()->id;
-            $taggedProblems = Problem::where('tagged_id', $user_id)->orderBy('created_at', 'DESC')->get();
+            $taggedProblems = Problem::where('targeted_id', $user_id)->orderBy('created_at', 'DESC')->get();
             if ($taggedProblems) {
                 return response()->json([
                     'status' => 200,
@@ -70,14 +69,12 @@ class ProblemsController extends Controller
                     'message' => 'You have no problem that you have been tagged.'
                 ]);
             }
-        }
-        else {
+        } else {
             return response()->json([
                 'status' => 401,
                 'message' => 'Please login to post your problem'
             ]);
         }
-
     }
 
     public function solvedProblems()
@@ -97,8 +94,7 @@ class ProblemsController extends Controller
                     'message' => 'This problem has not solved'
                 ]);
             }
-        }
-        else {
+        } else {
             return response()->json([
                 'status' => 401,
                 'message' => 'Please login to post your problem'
@@ -122,8 +118,7 @@ class ProblemsController extends Controller
                     'message' => 'This problem has be solved'
                 ]);
             }
-        }
-        else {
+        } else {
             return response()->json([
                 'status' => 401,
                 'message' => 'Please login to post your problem'
@@ -191,6 +186,10 @@ class ProblemsController extends Controller
                 }
 
                 $problem->save();
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Your problem has been shared successfully'
+                ]);
 
                 // $sender = User::where('id', $user_id)->firstOrFail();
                 // $sender_firstname = $sender->first_name;
@@ -210,12 +209,9 @@ class ProblemsController extends Controller
                 // ];
 
                 // try {
-                    
+
                 //     Mail::to($recipient_mail)->send(new NotificationMail($mailData));
-                //     return response()->json([
-                //         'status' => 200,
-                //         'message' => 'Your problem has been shared successfully'
-                //     ]);
+                //    
                 // } catch (Exception $e) {
                 //     return response()->json([
                 //         'status' => 500,
@@ -308,5 +304,63 @@ class ProblemsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function myProblemsCount()
+    {
+        if (auth('sanctum')->check()) {
+            $user_id = auth('sanctum')->user()->id;
+
+            $problems = Problem::where('user_id', $user_id)->where('status', '0')->get();
+            $problemsCount = $problems->count();
+            return response()->json([
+                'status' => 200,
+                'problemsCount' => $problemsCount,
+            ]);
+        }
+    }
+
+    public function taggedProblemsCount()
+    {
+        if (auth('sanctum')->check()) {
+            $user_id = auth('sanctum')->user()->id;
+
+            $problems = Problem::where('targeted_id', $user_id)->where('status', '0')->get();
+            $problemsCount = $problems->count();
+            return response()->json([
+                'status' => 200,
+                'problemsCount' => $problemsCount,
+            ]);
+        }
+    }
+
+    public function allProblemsCount()
+    {
+        $problems = Problem::all();
+        $problemsCount = $problems->count();
+        return response()->json([
+            'status' => 200,
+            'problemsCount' => $problemsCount,
+        ]);
+    }
+
+    public function allSolvedProblemsCount()
+    {
+        $problems = Problem::where('status', '1')->get();
+        $problemsCount = $problems->count();
+        return response()->json([
+            'status' => 200,
+            'problemsCount' => $problemsCount,
+        ]);
+    }
+
+    public function allUnsolvedProblemsCount()
+    {
+        $problems = Problem::where('status', '0')->get();
+        $problemsCount = $problems->count();
+        return response()->json([
+            'status' => 200,
+            'problemsCount' => $problemsCount,
+        ]);
     }
 }
