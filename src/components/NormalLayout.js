@@ -22,7 +22,7 @@ const NormalLayout = ({ children, navigation }) => {
 
       {/* main section */}
       <div className=" py-4 h-full ">
-        {navigation.showFilter && (
+        {navigation && navigation.showFilter && (
           <div>
             <Wrapper className=" flex justify-around p-2">
               <LightWrapper className="p-2 gap-3 text-sm min-w-28 px-5">
